@@ -1,0 +1,95 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title b_page
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    link(rel='stylesheet', href='../bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='styles/main.css')
+  body.gray-bg
+    include pug/helpers/_mixins.pug
+    include pug/helpers/_variables.pug
+    header.header
+      nav.navbar.navbar-default
+        .container
+          .row.row-flex
+            .col-md-3.row-flex.navbar__column
+              a(href='#').navbar__brand
+                img(src="img/logo.png" width="96" height="25")
+            .col-md-9.row-flex.navbar__column
+              ul.list-inline.navbar__list
+                each val in menu
+                  li.list-inline-item.navbar__item
+                    a(href=val.href).navbar__item-link=val.name
+              .navbar-toggle.navbar__mobile
+                +icon('bar-menu')
+
+    section.banner
+      .container
+        #carouselExampleIndicators.carousel.slide.banner__slide(data-ride='carousel')
+          .carousel-inner.carousel__inner
+              .carousel-item.active.carousel__item
+                .row
+                  .col-md-4
+                    img.d-block.w-100(src='img/big-slider-img.png', alt='slide')
+                  .col-md-8.carousel-item__descr
+                    h2
+                      a(href='#').carousel-item__name Lorem ipsum dolor sit amet
+                    p.carousel-item__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    a(href='#').btn.btn-light.btn_md.btn_light Подробнее
+              .carousel-item.carousel__item
+                .row
+                  .col-md-4
+                    img.d-block.w-100(src='img/big-slider-img.png', alt='slide')
+                  .col-md-8.carousel-item__descr
+                    h2
+                      a(href='#').carousel-item__name Lorem ipsum dolor sit amet
+                    p.carousel-item__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    a(href='#').btn.btn-light.btn_md.btn_light Подробнее
+
+          ol.carousel-indicators.carousel__indicators
+            li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+            li(data-target='#carouselExampleIndicators', data-slide-to='1')
+            li(data-target='#carouselExampleIndicators', data-slide-to='2')
+          a.carousel-control-prev.icon.icon_prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+            //-span.carousel-control-prev-icon(aria-hidden='true')
+            span.sr-only Previous
+          a.carousel-control-next.icon.icon_next(href='#carouselExampleIndicators', role='button', data-slide='next')
+            //-pan.carousel-control-next-icon(aria-hidden='true')
+            span.sr-only Next
+
+    section.product
+      .container
+        .row
+          - for (var a = 0; a < 4; a++)
+            include pug/components/_product-item
+        form.product-form
+          h3.product-form__title Отправить заявку
+          .form-group.product-form__item
+            label(for='exampleInputName')
+            input#exampleInputName.form-control.product-form__input(type='email', aria-describedby='emailHelp', placeholder='Ваше имя')
+
+          .form-group.product-form__item
+            label(for='exampleInputPassword1')
+            input#exampleInputPassword1.form-control.product-form__input(type='password', placeholder='Ваш телефон')
+          .form-group.product-form__item
+            label(for='exampleInputEmail1')
+            input#exampleInputEmail1.form-control.product-form__input(type='password', placeholder='E-mail')
+          .form-group.product-form__item
+            label(for='exampleInputPassword1')
+            textarea#exampleFormControlTextarea1.form-control.product-form__input(rows='6', placeholder='Ваше сообщение')
+
+          button.btn.btn-success.btn_md(type='submit') Отправить
+    footer
+      .container
+        p.lead.product__text.product__text_second Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          | et dolore
+        .row
+          .col-md-4 Lorem ipsum
+          .col-md-4 Lorem ipsum
+          .col-md-4 Lorem ipsum
+
+  block scripts
+    script(src='../bower_components/jquery/dist/jquery.min.js')
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='js/index.js')
