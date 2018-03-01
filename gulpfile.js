@@ -90,6 +90,17 @@ gulp.task('imageSync', function () {
         .pipe(gulp.dest(outputDir + 'img/'));
 });
 
+gulp.task('bower', function() {
+    //return gulp.src(mainBowerFiles('**/*.js' ,{debugging:true}))
+    return gulp.src([
+        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/bootstrap/dist/js/bootstrap.min.js'
+    ])
+        .pipe(concat("vendor.js"))
+        //.pipe(uglify()) // Сжимаем JS файл
+        .pipe(gulp.dest(outputDir + 'js/')); // Выгружаем в папку
+});
+
 gulp.task('svgSpriteBuild', function (){
     return gulp.src(srcDir + 'i/*.svg')
     // minify svg
@@ -131,7 +142,7 @@ gulp.task('svgSpriteBuild', function (){
 
 gulp.task('build', gulp.series(
     'cleanOutputDir',
-    gulp.parallel('pug','jsSync', 'imageSync', 'svgSpriteBuild', 'sass'))
+    gulp.parallel('pug', 'bower', 'jsSync', 'imageSync', 'svgSpriteBuild', 'sass'))
 );
 
 gulp.task('watch', function(){

@@ -4,7 +4,7 @@ html(lang='en')
     meta(charset='UTF-8')
     title b_page
     meta(name='viewport', content='width=device-width,initial-scale=1')
-    link(rel='stylesheet', href='../bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
     link(rel='stylesheet', href='styles/main.css')
   body.gray-bg
     include pug/helpers/_mixins.pug
@@ -90,6 +90,5 @@ html(lang='en')
           .col-md-4 Lorem ipsum
 
   block scripts
-    script(src='../bower_components/jquery/dist/jquery.min.js')
-    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='js/vendor.js')
     script(src='js/index.js')
