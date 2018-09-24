@@ -1,0 +1,58 @@
+h1,
+.h1 {
+  @include font(30px, 600, 1);
+
+  color: $gray--darken;
+
+
+  @media (min-width: $md) {
+    @include font(50px, 800, 1);
+  }
+}
+
+// blog
+h6,
+.h6 {
+  @include font(14px, 400, 1.22);
+
+  color: $gray--dark;
+}
+
+p {
+  @include font(14px, 400, 1.5);
+
+  text-align: left;
+
+  color: #333;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  color: inherit;
+  text-decoration: none;
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+small {
+  font-size: 80%;
+}

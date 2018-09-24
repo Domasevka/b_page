@@ -1,14 +1,33 @@
-$sm: 544px;
-$md: 768px;
-$lg: 1024px;
-$xl: 1200px;
-$xxl: 1440px;
+$site-width: 960px;    // ширина сайта
+$gutter: 15px;
 
-$main-color: #2a99f7;
-$primary-color: #e91346;
-$secondary-color: #f5f2ec;
-$black: #000;
-$white: #fff;
-$gray: #c3c3c3;
-$gray-dark: #a3a3a3;
-$gray-light: #f1f1f1;
+$color-main: #646d81;
+$color-main-light: #4f9cd4;
+$color-secondary: #f2f4f8;
+$color-white: #fff;
+$color-black: #000;
+$color-success: #99a1b3;
+
+$btn-main-bg: $color-main;
+$btn-main-color: $color-secondary;
+$btn-main-border: $color-success;
+
+$gray--lightest: #eee;
+$gray--lighten: #f7f7f7;
+$gray--morelight: #e1e1e1;
+$gray--light: #8f8f8f;
+$gray: #444;
+$gray--dark: #3c4852;
+$gray--darken: #15232d;
+
+
+$font-family: 'Lato', 'Tahoma', serif;
+$font: 'Lato', 'Tahoma', sans-serif;
+
+$breakpoint: 1200px;
+
+$sm: 544px;     // Small screen / phone
+$md: 768px;     // Medium screen / tablet
+$lg: 992px;     // Large screen / desktop
+$xl: 1200px;    // Extra large screen desktop
+$xxl: 1440px;   // Wide desktop

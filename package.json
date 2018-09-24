@@ -4,8 +4,9 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
+    "del": "^3.0.0",
     "pug-bootstrap": "^0.0.15",
-    "del": "^3.0.0"
+    "swiper": "^4.4.1"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
@@ -31,9 +32,7 @@
     "imagemin-pngquant": "^5.0.1",
     "rimraf": "^2.6.2"
   },
-  "scripts": {
-    "gulp": "./node_modules/gulp/bin/gulp.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Domasevka/b_page.git"

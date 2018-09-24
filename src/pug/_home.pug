@@ -1,0 +1,66 @@
+section
+  .exercise
+    .container
+      .row
+          //.container-inner
+          .exercise__name
+            span Multiple Choice Assessment
+          .exercise__number
+            span Question1
+          .exercise__descr
+            p
+              | Students use a fan to push a ball on the floor. How can the students give the ball a bigger push?
+          .exercise__image
+            img(src='img/fan1_cycle.gif', alt="Static Image")
+
+          .exercise-image__wrap
+            .exercise-image
+              img(id='gifdiv', src='img/pic__0003.jpg', alt="Static Image")
+            .exercise-image__row
+              p.exercise-image__descr
+                strong A
+                |  Turn the fun around
+              .exercise-image__btn
+                button(onclick="document.getElementById('gifdiv').src='img/fan3_once.gif'", class='btn btn-success btn-md') Restart GIF
+          .exercise-image__wrap
+            .exercise-image
+              img(id="gifdiv2", src='img/pic__0002.jpg', alt='slide')
+            .exercise-image__row
+              p.exercise-image__descr
+                strong B
+                |   Use two fans
+              .exercise-image__btn
+                //button(class='btn btn-success btn-md', id='gif-trigger') Restart GIF
+                button(onclick="document.getElementById('gifdiv2').src='img/fan2_once.gif'", class='btn btn-success btn-md') Restart GIF
+
+          .exercise-image__wrap
+            .exercise-image
+              img(src='img/pic__0000.jpg', alt='slide')
+            .exercise-image__row
+              p.exercise-image__descr
+                strong C
+                |   Take the fan away
+
+          .exercise__name
+            span Compare The Two Speeds
+          .exercise__number
+            span Answer
+          .exercise-image__wrap
+            .exercise-image
+              img(id="gifdiv4", src='img/pic__0001.jpg', alt="Static Image")
+            .exercise-image
+              img(id="gifdiv3", src='img/pic__0002.jpg', alt="Static Image")
+            .exercise-image__row
+              p.exercise-image__descr
+                strong B
+                |   Use two fans
+              .exercise-image__btn
+                button(onclick="document.getElementById('gifdiv3').src='img/fan2_once.gif'; document.getElementById('gifdiv4').src='img/fan1_once.gif'", class='btn btn-success btn-md') Restart GIF
+footer
+  .container
+    .row
+        //.container-inner
+        p © Accelerate Learning
+
+
+

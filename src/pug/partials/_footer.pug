@@ -1,0 +1,9 @@
+footer
+    .footer
+        .container
+            .row
+                nav.footer-nav
+                    each val in footerMenu
+                        a.footer-nav__link(href=val.href)=val.name
+.footer-copyright
+    p © 2015.  All rights reserved.

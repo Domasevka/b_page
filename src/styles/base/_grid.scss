@@ -1,0 +1,24 @@
+.container {
+  max-width: $site-width;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+// используется в сочетании с основным контейнером .container
+// аналог row у bootstrap, но с учетом flex-wrap: wrap
+.row {
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+  min-width: 100%;
+  &_center {
+    justify-content: center;
+  }
+}
+
+.row_flex {
+  display: flex;
+  flex-wrap: wrap;
+}

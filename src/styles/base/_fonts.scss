@@ -1,0 +1,16 @@
+$src-fonts: '../fonts/Lato';
+@each $font-folder, $file-name, $font-weight, $font-style in
+                (LatoThin, LatoThin, 100, normal),
+                (LatoLight, LatoLight, 300, normal),
+                (LatoRegular, LatoRegular, 400, normal),
+                (LatoBold, LatoBold, 700, normal), {
+  @font-face {
+    font-family: Lato;
+    font-weight: $font-weight;
+    font-style: $font-style;
+
+    src: url('#{$src-fonts}/#{$font-folder}/#{$file-name}.woff2') format('woff2'),
+    url('#{$src-fonts}/#{$font-folder}/#{$file-name}.woff') format('woff'),
+    url('#{$src-fonts}/#{$font-folder}/#{$file-name}.ttf') format('truetype');
+  }
+}
