@@ -10,15 +10,21 @@
 // используется в сочетании с основным контейнером .container
 // аналог row у bootstrap, но с учетом flex-wrap: wrap
 .row {
-  margin-left: -$gutter;
-  margin-right: -$gutter;
+  display: flex;
+  flex-wrap: wrap;
   min-width: 100%;
   &_center {
     justify-content: center;
   }
 }
 
-.row_flex {
+.row-flex {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+  min-width: 100%;
+  &_center {
+    justify-content: center;
+  }
 }
