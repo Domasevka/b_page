@@ -64,29 +64,28 @@ header
     .header__logo
       a(href="#")
         img(src="img/logo.png", width="96", height="25", alt="Logo")
-
     .container
-      a(href='#').btn.menu-btn.js-menu-btn
-        +icon('icon-menu','gray_mod')
-      .swiper-nav.nav-wrap
-        ul.menu-buttons.nav
+      .swiper-nav.nav
+        a(href='#').btn.nav-btn.js-nav-btn
+          +icon('icon-menu','gray_mod')
+        ul.nav__items
           li.nav__item
-            a(href="#" class="slide-1") ABOUT
-          li.nav-item
-            a(href="#" class="slide-2") PRODUCTS & FEATURES
-          li.nav-item
-            a(href="#" class="slide-3") SUPPORT
-          li.nav-item
-            a(href="#" class="js-slide") LOGIN
-          li.nav-item
-            a(href="#" class="js-slide") STEMSTORE
-        .swiper-container#container.subnav
-          .swiper-wrapper.subnav__wrap
+            a(href="#" class="slide-1 nav__item-link nav__item-link_main") ABOUT
+          li.nav__item
+            a(href="#" class="slide-2 nav__item-link nav__item-link_main") PRODUCTS & FEATURES
+          li.nav__item
+            a(href="#" class="slide-3 nav__item-link nav__item-link_main") SUPPORT
+          li.nav__item
+            a(href="#" class="js-slide nav__item-link nav__item-link_secondary") LOGIN
+          li.nav__item
+            a(href="#" class="js-slide nav__item-link nav__item-link_secondary") STEMSTORE
+        .swiper-container#container
+          .swiper-wrapper
             .swiper-slide
-              .swiper-slide__item.nav__subitem.subnav-column
-                a(href="#")
+              .swiper-slide__item
+                a.swiper-slide__item-link.accordion(href="#")
                   strong ABOUT
-                ul
+                ul.swiper-slide__item-list.panel
                   li
                     a(href="#") WHAT IS STEMSCOPES?
                   li
@@ -100,10 +99,11 @@ header
                   li
                     a(href="#") BLOG
             .swiper-slide
-              ul.swiper-slide__subnav.nav__subitem.subnav-columns
-                li.swiper-slide__item.nav__subitem-item
-                  strong STEMSCOPES  PRODUCTS
-                  ul.subnav-column
+              ul.swiper-slide__subnav
+                li.swiper-slide__item
+                  a.swiper-slide__item-link.accordion(href="#")
+                    strong STEMSCOPES  PRODUCTS
+                  ul.swiper-slide__item-list.panel
                     li
                       a(href="#") FIND CURRICULUM BUILT FOR MY STATE
                     li
@@ -116,9 +116,12 @@ header
                       a(href="#") DIVE-in ENGINEERING
                     li
                       a(href="#") STEMRANGERS SCIENCE NIGHT
-                li.swiper-slide__item.nav__subitem-item
-                  strong Stemscope Features
-                  ul.subnav-column
+                    li
+                      a(href="#") STEMRANGERS SCIENCE NIGHT
+                li.swiper-slide__item
+                  a.swiper-slide__item-link.accordion(href="#")
+                    strong Stemscope Features
+                  ul.swiper-slide__item-list.panel
                     li
                       a(href="#") 3D LEARNING
                     li
@@ -132,9 +135,10 @@ header
                     li
                       a(href="#") APPS
 
-                li.swiper-slide__item.nav__subitem-item
-                  strong Professional Development
-                  ul.subnav-column
+                li.swiper-slide__item
+                  a.swiper-slide__item-link.accordion(href="#")
+                    strong Professional Development
+                  ul.swiper-slide__item-list.panel
                     li
                       a(href="#") STEMSCOPES PRODUCT TRAINING
                     li
@@ -142,9 +146,10 @@ header
                     li
                       a(href="#") FREE RESOURCES
 
-                li.swiper-slide__item.nav__subitem-item
-                  strong Stem Sertification Programs
-                  ul.subnav-column
+                li.swiper-slide__item
+                  a.swiper-slide__item-link.accordion(href="#")
+                    strong Stem Sertification Programs
+                  ul.swiper-slide__item-list.panel
                     li
                       a(href="#") STEMSCOPES PRODUCT TRAINING
                     li
@@ -152,14 +157,38 @@ header
                     li
                       a(href="#") FREE RESOURCES
             .swiper-slide
-              ul.swiper-slide__item.nav__subitem.subnav-column
-                strong Support
-                li
-                  a(href="#") GET SUPPORT
-                li
-                  a(href="#") CONTACT US
-                li
-                  a(href="#") FAQ
+              .swiper-slide__item
+                a.swiper-slide__item-link.accordion(href="#")
+                  strong Support
+                ul.swiper-slide__item-list.panel
+                  li
+                    a(href="#") GET SUPPORT
+                  li
+                    a(href="#") CONTACT US
+                  li
+                    a(href="#") FAQ
+
+            //.swiper-slide
+            //  .swiper-slide__item
+            //    a.swiper-slide__item-link.accordion(href="#")
+            //      strong LOGIN
+            //    ul.swiper-slide__item-list.panel
+            //      li
+            //        a(href="#") item 1
+            //      li
+            //        a(href="#") item 2
+            //
+            //.swiper-slide
+            //  .swiper-slide__item
+            //    a.swiper-slide__item-link.accordion(href="#")
+            //      strong STEMSTORE
+            //    ul.swiper-slide__item-list.panel
+            //      li
+            //        a(href="#") item 1
+            //      li
+            //        a(href="#") item 2
+
+
 
 
 

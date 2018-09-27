@@ -68,17 +68,14 @@
     mySwiper = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
     //slidesPerView: 3,
+    //freeMode: true,
     centeredSlides: true,
     //centeredSlides: false,
     //spaceBetween: 10,
 
     pagination: {
       el: '.swiper-pagination',
-      type: 'fraction',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      clickable: true,
     },
 
     breakpoints: {
@@ -140,17 +137,50 @@
 
 })(); /* IIFE end */
 
-document.body.addEventListener('click', _onClick);
 
-function _onClick(evt) {
-  //снятие класса clicked с активного элемента
-  var сlickedElement = document.querySelector('.js-menu-btn');
+(function() {
+//document.body.addEventListener('click', _onClick);
+var dropBtn = document.querySelector('.js-nav-btn');
+//var container = document.getElementById('container').classList;
+
+dropBtn.addEventListener('click', showList);
+function showList(evt) {
   var container = document.getElementById('container');
-
-  if (сlickedElement) {
-    container.classList.add('show');
+  if (container.classList) {
+    container.classList.toggle("show");
+  } else {
+    var classes = container.className.split(" ");
+    var i = classes.indexOf("show");
+    if (i >= 0)
+      classes.splice(i, 1);
+    else
+      classes.push("show");
+    container.className = classes.join(" ");
   }
-  //добавление класса сlicked элементу, на котором
-  //сработал обработчик события
-  //evt.currentTarget.classList.add('сlicked');
+  // if (container.contains('show')) {
+  //   container.classList.remove('show');
+  // } else {
+  //   container.classList.add('show');
+  // }
+
 }
+})();
+
+
+(function() {
+
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+})();
